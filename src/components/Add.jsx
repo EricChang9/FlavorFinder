@@ -18,8 +18,7 @@ const Add = () => {
 
     if (file) {
       reader.readAsDataURL(file);
-      console.log('Clicked')
-      extract.main()
+      console.log('Clicked');
     }
   };
 
