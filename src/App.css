@@ -1,0 +1,140 @@
+body {
+  background-color: #efefe9;
+}
+
+.a--container {
+  margin-left: auto;
+  margin-right: auto;
+  width: 400px;
+  height: 400px;
+  background-color: #e8d9cd;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  margin-top: 60px;
+  box-shadow: 5px 5px 5px gray;
+}
+
+.b--container {
+  align-self: flex-end;
+  margin-top: auto;
+  padding-right: 25px;
+  margin-bottom: 20px;
+}
+
+.a--button {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: none;
+  border: none;
+  cursor: pointer;
+  background-color: white;
+}
+
+.a--icon {
+  width: 50px;
+  height: 50px;
+  background-color: none;
+}
+
+.i--container {
+  border: solid grey 5px;
+  height: 230px;
+  width: 230px;
+  background-color: white;
+  margin: auto;
+  margin-top: 15px;
+  border-radius: 5px;
+}
+
+.i--image {
+  height: 230px;
+  width: 230px;
+  background: none;
+}
+
+.i--title {
+  font-size:x-large;
+  font-weight: bold;
+  padding: 0;
+  margin: 0 auto;
+  margin-top: 30px;
+}
+
+.m--container {
+  border-radius: 15px;
+  background-color: white;
+  height: 600px;
+  width: 450px;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 5px 5px 5px gray;
+  margin-top: 50px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 50px;
+}
+
+.m--title {
+  font-size: medium;
+  font-weight: bold;
+  margin-left: 10px;
+  margin-bottom: 0;
+  margin-top: 7px;
+  white-space: pre-line;
+}
+
+.m--image {
+  width: 448px;
+  height: 300px;
+  border: solid lightgray 1px;
+  margin: 0;
+  border-bottom: solid black 1px;
+  border-radius: 15px 15px 0 0;
+}
+
+.m--calories {
+  font-size:small;
+  font-weight:600;
+  margin-right: 15px;
+  margin-bottom: 0;
+  margin-top: 7px;
+
+}
+
+.m--description {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 0;
+}
+
+.solid-line {
+  border: none;
+  border-top: solid black 1px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  margin-left: 0;
+  margin-right: 0;
+  padding: none;
+}
+
+.m--recipe {
+  margin-left: 1px;
+  margin-top: 0;
+  padding-left: 25px;
+}
+
+.r--container {
+  display: flex;
+  margin-left: auto;  
+  margin-right: auto;
+  flex-direction: row;
+  justify-content: space-between;
+  max-width: 600px;
+  flex-wrap: wrap;
+  margin-top: 40px;
+}
