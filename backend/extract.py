@@ -7,7 +7,7 @@ from firebase_admin import credentials, storage
 from flask import Flask, app, request, jsonify
 
 # Initialize Firebase Admin SDK
-cred = credentials.Certificate("../serviceAccountKey.json")
+cred = credentials.Certificate("/Users/aaronchanner/Documents/FlavorFinder/serviceAccountKey.json")
 firebase_admin.initialize_app(cred, {
     'storageBucket': 'meal-planning-cc508.appspot.com',
     'databaseURL': 'https://meal-planning-cc508-default-rtdb.firebaseio.com'
