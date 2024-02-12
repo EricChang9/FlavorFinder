@@ -21,7 +21,7 @@ def generate_recipe_from_ingredients(food_text):
 
   template = """### Instruction: Read the context and then generate recepices for the food items
       that only use the ingredients given. The context will have a list of ingredients in [] that denoted by brackets.
-      For each dish(dishes are denoted by the second []) output a recipe. Reponses shoul followedd by a dish. Generate a recipe for the dish. follow the guidelines outlined in the question.
+      For each dish(dishes are denoted by the second []) output a recipe. Reponses should be followed by a dish. Generate a recipe for the dish. Follow the guidelines outlined in the question.
 
       ### Input:
       Context: {context}
@@ -35,7 +35,7 @@ def generate_recipe_from_ingredients(food_text):
     )
 
   context = f"{food_text},{food_text}"
-  question = """Please generate only a recipe idea that could be made from these ingredients given in the context(Do not include the ingredients).
+  question = """Please generate only a recipe idea that could be made from these ingredients given in the context(Do not include the items found in the image).
   The main focus is on a good recipe and each recipe does not have to use all the ingredients.
   First, list the specific ingredients that you need for the recipe that you chose. Make sure only to list the ingredients that will be used for
   the recipe and only use ingredients that are in the context. However, you can assume the use of spices, stocks, butter, and sauces.
@@ -44,7 +44,7 @@ def generate_recipe_from_ingredients(food_text):
   completions = pg.Completion.create(
       model="Nous-Hermes-Llama2-13B",
       prompt=[
-        prompt1.format(context=context, question=question),
+         prompt1.format(context=context, question=question),
         # prompt2.format(context=context, question=question)
       ],
       max_tokens= 1000,
@@ -52,6 +52,8 @@ def generate_recipe_from_ingredients(food_text):
     )
 
   recipe_index=(completions['choices'][0]["text"]).find("Recipe")
-  split_text = (completions['choices'][0]["text"])[recipe_index:]
+
+  #Removes unneccesary Javascript code
+  split_text = (completions['choices'][0]["text"])[recipe_index:] if recipe_index != -1 else (completions['choices'][0]["text"])
   
   return json.dumps(split_text)
